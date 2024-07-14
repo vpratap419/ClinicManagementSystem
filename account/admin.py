@@ -16,7 +16,7 @@ class CustomUserAdmin(UserAdmin):  # GuardedModelAdmin
         ('Personal Info',
          {'fields': ('cid', 'role', 'username', 'password', 'name', 'email', 'gender', 'mobile', 'dob', 'addr',
                      'city', 'state', 'pin')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'user_permissions')}),
     )
     # InlineModelAdmin
     add_fieldsets = (  # for fields to be used when creating a user
@@ -26,7 +26,7 @@ class CustomUserAdmin(UserAdmin):  # GuardedModelAdmin
                 'cid', 'role', 'username', 'password1', 'password2', 'name', 'gender', 'email', 'mobile', 'dob', 'addr',
                 'city', 'state', 'pin')}
          ),
-        ('Permissions', {'fields': ('is_staff', 'is_superuser', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_staff', 'user_permissions')}),
     )
 
     search_fields = (
